@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HA // WHISPER OF A DREAM</title>
+    <style>
+        :root {
+            --bg-black: #05050a;
+            --cyber-blue: #00d4ff;
+            --deep-blue: #003366;
+            --text-gray: #a0a0b0;
+            --glitch-speed: 0.3s;
+        }
+
+        body {
+            background-color: var(--bg-black);
+            color: white;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            overflow-x: hidden;
+            /* Subtle scanline effect */
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), 
+                        linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06)),
+                        var(--bg-black);
+            background-size: 100% 2px, 3px 100%, 100% 100%;
+        }
+
+        .container {
+            text-align: center;
+            border: 1px solid var(--deep-blue);
+            padding: 3rem;
+            background: rgba(0, 20, 40, 0.4);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.1);
+            border-radius: 4px;
+            max-width: 400px;
+            width: 90%;
+        }
+
+        h1 {
+            font-size: 1.5rem;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+            color: var(--cyber-blue);
+            text-shadow: 0 0 10px var(--cyber-blue);
+        }
+
+        .section-label {
+            font-size: 0.7rem;
+            color: var(--text-gray);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .link-card {
+            display: block;
+            text-decoration: none;
+            color: white;
+            padding: 1rem;
+            margin: 10px 0;
+            border: 1px solid var(--deep-blue);
+            transition: all 0.3s ease;
+            position: relative;
+            background: rgba(0, 0, 0, 0.6);
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .link-card:hover {
+            border-color: var(--cyber-blue);
+            background: rgba(0, 212, 255, 0.1);
+            transform: translateX(5px);
+            box-shadow: -5px 0 0 var(--cyber-blue);
+        }
+
+        .link-card::after {
+            content: '>>';
+            position: absolute;
+            right: 15px;
+            opacity: 0.5;
+        }
+
+        .footer-text {
+            margin-top: 2rem;
+            font-size: 0.6rem;
+            color: var(--deep-blue);
+            letter-spacing: 1px;
+        }
+
+        /* Y4-BB0 Inspired Accent */
+        .mascot-accent {
+            width: 40px;
+            height: 2px;
+            background: var(--cyber-blue);
+            margin: 0 auto 20px;
+            box-shadow: 0 0 8px var(--cyber-blue);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="mascot-accent"></div>
+        <h1>Holding Absence</h1>
+        
+        <span class="section-label">Official Socials</span>
+        <a href="https://twitter.com/holdingabsence" class="link-card" target="_blank">Twitter / X</a>
+        <a href="https://instagram.com/holdingabsence" class="link-card" target="_blank">Instagram</a>
+
+        <span class="section-label">Lucas Woodland</span>
+        <a href="https://twitter.com/lucaswoodland" class="link-card" target="_blank">Twitter / X</a>
+        <a href="https://instagram.com/lucaswoodland" class="link-card" target="_blank">Instagram</a>
+
+        <div class="footer-text">SYSTEM STATUS: SENTIENT // Y4-BB0</div>
+    </div>
+
+</body>
+</html>
