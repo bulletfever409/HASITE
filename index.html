@@ -3,126 +3,155 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HA // WHISPER OF A DREAM</title>
+    <title>HA // TRANSMISSION</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bellefair&family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-black: #05050a;
-            --cyber-blue: #00d4ff;
-            --deep-blue: #003366;
-            --text-gray: #a0a0b0;
-            --glitch-speed: 0.3s;
+            --bg-deep: #0a0d12;
+            --off-white: #e0e0e0;
+            --blue-glow: #00d4ff;
+            --border-muted: #1e2630;
         }
 
         body {
-            background-color: var(--bg-black);
-            color: white;
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-deep);
+            color: var(--off-white);
+            font-family: 'Inter', sans-serif;
+            margin: 0;
             display: flex;
-            flex-direction: column;
             align-items: center;
             justify-content: center;
             min-height: 100vh;
-            margin: 0;
-            overflow-x: hidden;
-            /* Subtle scanline effect */
-            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), 
-                        linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06)),
-                        var(--bg-black);
-            background-size: 100% 2px, 3px 100%, 100% 100%;
+            background-image: 
+                linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+                radial-gradient(circle at 80% 20%, rgba(0, 50, 100, 0.2) 0%, transparent 50%);
         }
 
-        .container {
-            text-align: center;
-            border: 1px solid var(--deep-blue);
-            padding: 3rem;
-            background: rgba(0, 20, 40, 0.4);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 0 20px rgba(0, 212, 255, 0.1);
-            border-radius: 4px;
-            max-width: 400px;
+        .frame {
             width: 90%;
-        }
-
-        h1 {
-            font-size: 1.5rem;
-            letter-spacing: 5px;
-            text-transform: uppercase;
-            margin-bottom: 2rem;
-            color: var(--cyber-blue);
-            text-shadow: 0 0 10px var(--cyber-blue);
-        }
-
-        .section-label {
-            font-size: 0.7rem;
-            color: var(--text-gray);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-top: 1.5rem;
-            margin-bottom: 0.5rem;
-            display: block;
-        }
-
-        .link-card {
-            display: block;
-            text-decoration: none;
-            color: white;
-            padding: 1rem;
-            margin: 10px 0;
-            border: 1px solid var(--deep-blue);
-            transition: all 0.3s ease;
+            max-width: 900px;
+            padding: 40px;
             position: relative;
-            background: rgba(0, 0, 0, 0.6);
+            border-left: 1px solid var(--border-muted);
+        }
+
+        /* The Header Font */
+        .title {
+            font-family: 'Bellefair', serif;
+            font-size: 5rem;
+            line-height: 0.85;
             text-transform: uppercase;
-            font-weight: bold;
+            margin: 0;
+            letter-spacing: -2px;
+        }
+
+        .subtitle {
+            font-weight: 700;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            margin-top: 10px;
+            display: block;
+        }
+
+        .byline {
+            font-weight: 700;
+            font-size: 2rem;
+            margin-top: 40px;
+            letter-spacing: -1px;
+            text-transform: uppercase;
+        }
+
+        /* Link Section */
+        .link-grid {
+            margin-top: 50px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .link-item {
+            text-decoration: none;
+            color: var(--off-white);
+            border: 1px solid var(--border-muted);
+            padding: 15px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
             letter-spacing: 1px;
+            transition: 0.3s;
+            background: rgba(255, 255, 255, 0.02);
+            display: flex;
+            justify-content: space-between;
         }
 
-        .link-card:hover {
-            border-color: var(--cyber-blue);
-            background: rgba(0, 212, 255, 0.1);
-            transform: translateX(5px);
-            box-shadow: -5px 0 0 var(--cyber-blue);
+        .link-item:hover {
+            border-color: var(--blue-glow);
+            background: rgba(0, 212, 255, 0.05);
+            box-shadow: inset 0 0 10px rgba(0, 212, 255, 0.1);
         }
 
-        .link-card::after {
-            content: '>>';
-            position: absolute;
-            right: 15px;
+        /* Footer / Legal block */
+        .footer-legal {
+            margin-top: 60px;
+            font-size: 0.65rem;
+            color: #666;
+            text-align: right;
+            line-height: 1.6;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .barcode {
+            font-family: monospace;
+            font-size: 1.2rem;
+            letter-spacing: -1px;
+            margin-top: 10px;
             opacity: 0.5;
         }
 
-        .footer-text {
-            margin-top: 2rem;
-            font-size: 0.6rem;
-            color: var(--deep-blue);
-            letter-spacing: 1px;
+        /* Braille & Logos placeholder */
+        .deco-assets {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-top: 20px;
         }
 
-        /* Y4-BB0 Inspired Accent */
-        .mascot-accent {
-            width: 40px;
-            height: 2px;
-            background: var(--cyber-blue);
-            margin: 0 auto 20px;
-            box-shadow: 0 0 8px var(--cyber-blue);
+        .logos {
+            font-size: 1.2rem;
+            letter-spacing: 15px;
+            opacity: 0.8;
         }
+
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <div class="mascot-accent"></div>
-        <h1>Holding Absence</h1>
+    <div class="frame">
+        <span class="subtitle">A FIRST TRANSMISSION:</span>
+        <h1 class="title">WHISPER<br>OF A DREAM</h1>
         
-        <span class="section-label">Official Socials</span>
-        <a href="https://twitter.com/holdingabsence" class="link-card" target="_blank">Twitter / X</a>
-        <a href="https://instagram.com/holdingabsence" class="link-card" target="_blank">Instagram</a>
+        <div class="byline">BY HOLDING ABSENCE</div>
 
-        <span class="section-label">Lucas Woodland</span>
-        <a href="https://twitter.com/lucaswoodland" class="link-card" target="_blank">Twitter / X</a>
-        <a href="https://instagram.com/lucaswoodland" class="link-card" target="_blank">Instagram</a>
+        <div class="link-grid">
+            <a href="https://twitter.com/holdingabsence" class="link-item" target="_blank">Band Twitter <span>[01]</span></a>
+            <a href="https://instagram.com/holdingabsence" class="link-item" target="_blank">Band Instagram <span>[02]</span></a>
+            <a href="https://twitter.com/lucaswoodland" class="link-item" target="_blank">L. Woodland Twitter <span>[03]</span></a>
+            <a href="https://www.instagram.com/loocaswoodland/" class="link-item" target="_blank">L. Woodland Instagram <span>[04]</span></a>
+        </div>
 
-        <div class="footer-text">SYSTEM STATUS: SENTIENT // Y4-BB0</div>
+        <div class="footer-legal">
+            WRITTEN AND PERFORMED BY HOLDING ABSENCE & DANIEL BRAUNSTEIN.<br>
+            LYRICS BY LUCAS WOODLAND.<br>
+            IN ASSOCIATION WITH FUTURE HISTORY MANAGEMENT & SUMERIAN RECORDS.<br>
+            2026 - ALL RIGHTS RESERVED.
+            <div class="barcode">|| ||| || |||| | ||| ||</div>
+        </div>
+
+        <div class="deco-assets">
+            <div class="logos">⬡ HA ⚬</div>
+            <div style="font-size: 0.8rem; opacity: 0.3;">⠇⠥⠉⠁⠎ ⠺⠕⠕⠙⠇⠁⠝⠙</div>
+        </div>
     </div>
 
 </body>
