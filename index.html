@@ -41,244 +41,98 @@
         }
 
         .subtitle {
-            font-weight: 700;
-            font-size: 0.85rem;
-            letter-spacing: 2.5px;
-            margin-bottom: 5px;
-            display: block;
-            color: white;
-            text-transform: uppercase;
+            font-weight: 700; font-size: 0.85rem; letter-spacing: 2.5px;
+            margin-bottom: 5px; display: block; color: white; text-transform: uppercase;
         }
 
         .title {
-            font-family: 'Bellefair', serif;
-            font-size: 7.5rem; 
-            line-height: 0.8;
-            text-transform: uppercase;
-            margin: 0;
-            letter-spacing: -2px;
-            color: white;
-            font-weight: 400; 
-            
-            
-            text-shadow: 
-                0.8px 0px 0px white, 
-                -0.8px 0px 0px white, 
-                0px 0.3px 0px white;
-            
-            text-rendering: optimizeLegibility;
-            -webkit-font-smoothing: antialiased;
-            
-            display: block;
-            transform: scaleX(0.95);
-            transform-origin: left;
-            width: 110%;
+            font-family: 'Bellefair', serif; font-size: 7.5rem; line-height: 0.8;
+            text-transform: uppercase; margin: 0; letter-spacing: -2px; color: white;
+            text-shadow: 0.8px 0px 0px white, -0.8px 0px 0px white, 0px 0.3px 0px white;
+            text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased;
+            display: block; transform: scaleX(0.95); transform-origin: left; width: 110%;
         }
 
         .byline {
-            font-weight: 700;
-            font-size: 1.8rem;
-            margin-top: 35px;
-            letter-spacing: -1px;
-            text-transform: uppercase;
-            border-bottom: 1px solid var(--border-muted);
-            padding-bottom: 10px;
-            
-            
-            text-align: right;
-            margin-left: auto;
-            max-width: 60%;
+            font-weight: 700; font-size: 1.8rem; margin-top: 35px;
+            letter-spacing: -1px; text-transform: uppercase;
+            border-bottom: 1px solid var(--border-muted); padding-bottom: 10px;
+            text-align: right; margin-left: auto; width: fit-content;
         }
 
-        .video-section {
-            margin-top: 30px;
-            position: relative;
-            clear: both;
-        }
-
-        .video-label {
-            font-size: 0.65rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: var(--eva-red);
-            margin-bottom: 8px;
-            display: block;
-            font-weight: bold;
-        }
+        .video-section { margin-top: 30px; position: relative; clear: both; }
 
         .video-wrapper {
-            position: relative;
-            padding-bottom: 56.25%; 
-            height: 0;
-            border: 1px solid var(--border-muted);
-            background: #000;
+            position: relative; padding-bottom: 56.25%; height: 0;
+            border: 1px solid var(--border-muted); background: #000;
         }
 
-        .video-wrapper iframe {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            filter: contrast(1.1) brightness(0.9);
-        }
+        .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
 
         .link-grid {
-            margin-top: 40px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
+            margin-top: 40px; display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;
         }
 
         .link-item {
-            text-decoration: none;
-            color: var(--off-white);
-            border: 1px solid var(--border-muted);
-            padding: 15px;
-            font-size: 0.75rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: 0.2s;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            text-decoration: none; color: var(--off-white); border: 1px solid var(--border-muted);
+            padding: 15px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase;
+            letter-spacing: 1px; transition: 0.2s; display: flex; justify-content: space-between;
         }
 
-        .link-item:hover {
-            background: white;
-            color: var(--bg-deep);
-            border-color: white;
-        }
+        .link-item:hover { background: white; color: var(--bg-deep); }
 
         .terminal-section {
-            margin-top: 30px;
-            padding: 20px;
-            border: 1px dashed var(--border-muted);
-            background: rgba(0, 0, 0, 0.3);
-        }
-
-        #terminal-prompt {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            transition: opacity 0.4s ease;
-        }
-
-        .terminal-label {
-            font-size: 0.7rem;
-            letter-spacing: 1px;
-            font-weight: bold;
-            color: var(--blue-glow);
+            margin-top: 30px; padding: 20px;
+            border: 1px dashed var(--border-muted); background: rgba(0, 0, 0, 0.3);
         }
 
         #key-input {
-            background: transparent;
-            border: none;
-            border-bottom: 1px solid var(--blue-glow);
-            color: var(--off-white);
-            font-family: monospace;
-            padding: 5px;
-            outline: none;
-            width: 150px;
-            text-transform: uppercase;
+            background: transparent; border: none; border-bottom: 1px solid var(--blue-glow);
+            color: var(--off-white); font-family: monospace; padding: 5px; outline: none;
+            width: 150px; text-transform: uppercase;
         }
 
-        #secret-links {
-            display: none;
-            opacity: 0;
-            transition: opacity 0.8s ease;
-            text-align: left;
-        }
-
-        .secret-header {
-            color: var(--eva-red);
-            font-size: 0.7rem;
-            letter-spacing: 2px;
-            margin-bottom: 10px;
-            display: block;
-        }
+        #secret-links { display: none; opacity: 0; transition: opacity 0.8s ease; }
 
         .secret-link {
-            color: white;
-            text-decoration: none;
-            font-family: 'Bellefair', serif;
-            font-size: 1.8rem;
-            margin-right: 20px;
-            border-bottom: 1px solid transparent;
-            display: inline-block;
-            transform: scaleX(0.9);
-            transform-origin: left;
+            color: white; text-decoration: none; font-family: 'Bellefair', serif;
+            font-size: 1.8rem; margin-right: 20px; border-bottom: 1px solid transparent;
+            display: inline-block; transform: scaleX(0.9); transform-origin: left;
         }
 
-        .secret-link:hover {
-            border-bottom: 1px solid var(--eva-red);
+        .portal-btn {
+            display: inline-block; margin-top: 15px; padding: 12px 24px;
+            background: var(--eva-red); color: white; text-decoration: none;
+            font-size: 0.7rem; font-weight: bold; letter-spacing: 2px;
+            border: 1px solid white; transition: 0.3s; text-transform: uppercase;
         }
+
+        .portal-btn:hover { background: white; color: var(--eva-red); }
 
         .footer-block {
-            margin-top: 50px;
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
+            margin-top: 50px; display: flex; justify-content: space-between; align-items: flex-end;
         }
 
-        .legal-text {
-            font-size: 0.6rem;
-            color: #505863;
-            line-height: 1.6;
-            text-transform: uppercase;
-            max-width: 400px;
-        }
+        .legal-text { font-size: 0.6rem; color: #505863; text-transform: uppercase; max-width: 400px; }
 
-        .deco-assets {
-            text-align: right;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-        }
-
-        .barcode {
-            font-family: monospace;
-            font-size: 1rem;
-            letter-spacing: -1px;
-            opacity: 0.4;
-        }
-
-        .ha-container {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-top: 10px;
-        }
-
-        .braille {
-            font-size: 0.75rem;
-            letter-spacing: 2px;
-            opacity: 0.3;
-        }
-
-        .ha-logo {
-            font-size: 1.2rem;
-            letter-spacing: 5px;
-            font-weight: bold;
-        }
+        .braille { font-size: 0.75rem; letter-spacing: 2px; opacity: 0.3; margin-right: 15px; }
 
         @media (max-width: 600px) {
             .title { font-size: 4rem; transform: scaleX(1); width: 100%;}
-            .byline { max-width: 100%; font-size: 1.4rem; }
-            #terminal-prompt { flex-direction: column; align-items: flex-start; }
+            .byline { margin-left: 0; text-align: left; width: 100%; }
         }
     </style>
 </head>
 <body>
-
     <div class="frame">
         <span class="subtitle">A FIRST TRANSMISSION:</span>
         <h1 class="title">WHISPER<br>OF A DREAM</h1>
-        
         <div class="byline">BY HOLDING ABSENCE</div>
 
         <div class="video-section">
-            <span class="video-label">LIVE FEED // BANGER IDENTIFIED</span>
             <div class="video-wrapper">
-                <iframe src="https://www.youtube.com/embed/o7QbtEsO3zE?modestbranding=1&rel=0" frameborder="0" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/o7QbtEsO3zE?modestbranding=1&rel=0" allowfullscreen></iframe>
             </div>
         </div>
 
@@ -291,29 +145,23 @@
 
         <div class="terminal-section">
             <div id="terminal-prompt">
-                <span class="terminal-label">SECRETS TO BE REVEALED // ENTER KEY:</span>
+                <span style="font-size: 0.7rem; color: var(--blue-glow); font-weight: bold;">ENTER KEY:</span>
                 <input type="text" id="key-input" autocomplete="off" placeholder="********">
             </div>
-
             <div id="secret-links">
-                <span class="secret-header">ENCRYPTION BYPASSED // ACCESS GRANTED:</span>
+                <span style="color: var(--eva-red); font-size: 0.7rem; display: block; margin-bottom: 10px;">ACCESS GRANTED:</span>
                 <a href="https://www.instagram.com/bulletfever409" class="secret-link" target="_blank">IG @BULLETFEVER409</a>
                 <a href="https://twitter.com/apexofitall" class="secret-link" target="_blank">X @APEXOFITALL</a>
+                <br>
+                <a href="portal.html" class="portal-btn">ENTER ARCHIVE</a>
             </div>
         </div>
 
         <div class="footer-block">
-            <div class="legal-text">
-                WRITTEN AND PERFORMED BY HOLDING ABSENCE & DANIEL BRAUNSTEIN.<br>
-                LYRICS BY LUCAS WOODLAND.<br>
-                © 2026 ABSENCE AUTOMATIONS // ALL RIGHTS RESERVED.
-            </div>
-            <div class="deco-assets">
-                <div class="barcode">|| ||| || |||| | ||| ||</div>
-                <div class="ha-container">
-                    <div class="braille">⠃⠥⠇⠇⠑⠞⠋⠑⠧⠑⠗⠼⠙⠚⠊</div>
-                    <div class="ha-logo">⬡ HA</div>
-                </div>
+            <div class="legal-text">© 2026 ABSENCE AUTOMATIONS // ALL RIGHTS RESERVED.</div>
+            <div style="display: flex; align-items: center;">
+                <div class="braille">⠃⠥⠇⠇⠑⠞⠋⠑⠧⠑⠗⠼⠙⠚⠊</div>
+                <div style="font-family: monospace; opacity: 0.4;">|| ||| || |||| | ||| ||</div>
             </div>
         </div>
     </div>
@@ -322,16 +170,15 @@
         const input = document.getElementById('key-input');
         const prompt = document.getElementById('terminal-prompt');
         const secrets = document.getElementById('secret-links');
+        const _v = "WUFCU09MVVRF";
 
         input.addEventListener('input', (e) => {
-            if (e.target.value.toUpperCase() === 'YABSOLUTE') {
+            if (e.target.value.toUpperCase() === atob(_v)) {
                 prompt.style.opacity = '0';
                 setTimeout(() => {
                     prompt.style.display = 'none';
                     secrets.style.display = 'block';
-                    setTimeout(() => {
-                        secrets.style.opacity = '1';
-                    }, 50);
+                    setTimeout(() => secrets.style.opacity = '1', 50);
                 }, 400);
             }
         });
