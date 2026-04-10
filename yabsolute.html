@@ -93,6 +93,7 @@
             filter: contrast(1.1) brightness(0.9);
             transition: 0.4s ease;
             z-index: 1;
+            display: block;
         }
 
         .gallery-item:hover img {
@@ -109,8 +110,9 @@
             border-style: dashed;
         }
 
-  .upload-terminal {
+        .upload-terminal {
             border: 1px solid var(--eva-red);
+            background: #ffffff;
             position: relative;
             padding: 0;
             height: 650px;
@@ -119,9 +121,10 @@
         }
 
         .upload-terminal::before {
-            content: "SECURE UPLOAD PORTAL // NO LOGIN REQUIRED";
+            content: "SECURE UPLOAD PORTAL // DIRECT FEED";
             position: absolute;
-            top: -10px; left: 15px;
+            top: -12px; left: 15px;
+            background: var(--bg-deep);
             padding: 0 10px;
             font-size: 0.6rem;
             color: var(--eva-red);
@@ -134,7 +137,6 @@
             width: 100%;
             height: 100%;
             border: none;
-            filter: invert(90%) hue-rotate(180deg) brightness(1.1) contrast(1.1);
         }
 
         .back-link {
@@ -146,6 +148,7 @@
             text-transform: uppercase;
             letter-spacing: 2px;
             transition: 0.3s;
+            cursor: pointer;
         }
 
         .back-link:hover { color: white; }
@@ -166,17 +169,22 @@
         <div class="gallery-item">
             <img src="https://lh3.googleusercontent.com/d/1tgCM3J1JpnE1FoGVVct9BLTtsiBDaTrs" alt="Transmission 01">
         </div>
-
         <div class="gallery-item waiting-box">WAITING FOR SIGNAL...</div>
         <div class="gallery-item waiting-box">WAITING FOR SIGNAL...</div>
     </div>
 
     <div class="upload-terminal">
-        <iframe src="https://tally.so/r/VLMYxN?transparentBackground=1" title="Archive Upload"></iframe>
+        <iframe src="https://tally.so/r/VLMYxN" title="Archive Upload"></iframe>
     </div>
 
-    <a href="index.html" class="back-link">← RETURN TO MAIN TERMINAL</a>
+    <div id="back-to-main" class="back-link">← RETURN TO MAIN TERMINAL</div>
 </div>
+
+<script>
+    document.getElementById('back-to-main').addEventListener('click', function() {
+        window.location.href = atob('aW5kZXguaHRtbA==');
+    });
+</script>
 
 </body>
 </html>
