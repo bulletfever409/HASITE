@@ -153,7 +153,7 @@
                 <a href="https://www.instagram.com/bulletfever409" class="secret-link" target="_blank">IG @BULLETFEVER409</a>
                 <a href="https://twitter.com/apexofitall" class="secret-link" target="_blank">X @APEXOFITALL</a>
                 <br>
-                <a href="portal.html" class="portal-btn">ENTER ARCHIVE</a>
+                <a href="#" id="portal-link" class="portal-btn">ENTER ARCHIVE</a>
             </div>
         </div>
 
@@ -170,10 +170,18 @@
         const input = document.getElementById('key-input');
         const prompt = document.getElementById('terminal-prompt');
         const secrets = document.getElementById('secret-links');
-        const _v = "WUFCU09MVVRF";
+        const portalBtn = document.getElementById('portal-link');
+        
+        
+        const _v = "QUJTT0xVVEU="; 
 
         input.addEventListener('input', (e) => {
-            if (e.target.value.toUpperCase() === atob(_v)) {
+            const userKey = e.target.value.toUpperCase();
+            
+            if (userKey === atob(_v)) {
+               
+                portalBtn.href = userKey.toLowerCase() + ".html";
+
                 prompt.style.opacity = '0';
                 setTimeout(() => {
                     prompt.style.display = 'none';
