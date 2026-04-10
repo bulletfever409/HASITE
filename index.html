@@ -38,6 +38,8 @@
             border-left: 1px solid var(--border-muted);
             background: rgba(10, 13, 18, 0.7);
             backdrop-filter: blur(8px);
+            display: flex;
+            flex-direction: column;
         }
 
         .subtitle {
@@ -57,7 +59,10 @@
             font-weight: 700; font-size: 1.8rem; margin-top: 35px;
             letter-spacing: -1px; text-transform: uppercase;
             border-bottom: 1px solid var(--border-muted); padding-bottom: 10px;
-            text-align: right; margin-left: auto; width: fit-content;
+            /* Updated for Right Justification */
+            text-align: right;
+            align-self: flex-end;
+            width: 100%;
         }
 
         .video-section { margin-top: 30px; position: relative; clear: both; }
@@ -120,7 +125,7 @@
 
         @media (max-width: 600px) {
             .title { font-size: 4rem; transform: scaleX(1); width: 100%;}
-            .byline { margin-left: 0; text-align: left; width: 100%; }
+            .byline { text-align: right; width: 100%; }
         }
     </style>
 </head>
@@ -179,7 +184,6 @@
             const userKey = e.target.value.toUpperCase();
             
             if (userKey === atob(_v)) {
-            
                 portalBtn.href = userKey.toLowerCase() + ".html";
 
                 prompt.style.opacity = '0';
