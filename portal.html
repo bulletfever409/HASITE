@@ -68,9 +68,41 @@
             border: 1px solid var(--border-muted);
             aspect-ratio: 1/1;
             background: #000;
+            overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
+            transition: 0.3s;
+            position: relative;
+        }
+
+        /* Scanline effect over images */
+        .gallery-item::after {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.15) 50%);
+            background-size: 100% 4px;
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            /* Grayscale removed, subtle contrast/brightness boost for terminal feel */
+            filter: contrast(1.1) brightness(0.9);
+            transition: 0.4s ease;
+            z-index: 1;
+        }
+
+        .gallery-item:hover img {
+            filter: contrast(1.2) brightness(1.1);
+            transform: scale(1.05);
+        }
+
+        .waiting-box {
             font-size: 0.55rem;
             color: #333;
             letter-spacing: 1px;
@@ -105,7 +137,6 @@
             width: 100%;
             height: 100%;
             border: none;
-            /* This filter helps match the form to your site's dark aesthetic */
             filter: invert(90%) hue-rotate(180deg) brightness(1.1) contrast(1.1);
         }
 
@@ -135,14 +166,16 @@
     </p>
 
     <div class="gallery-grid">
-        <div class="gallery-item"<img src="https://drive.google.com/file/d/1tgCM3J1JpnE1FoGVVct9BLTtsiBDaTrs/view?usp=drivesdk" alt="User Transmission 01"></div>
-        <div class="gallery-item">WAITING FOR SIGNAL...</div>
-        <div class="gallery-item">WAITING FOR SIGNAL...</div>
+        <div class="gallery-item">
+            <img src="https://lh3.googleusercontent.com/d/1tgCM3J1JpnE1FoGVVct9BLTtsiBDaTrs" alt="Transmission 01">
+        </div>
+
+        <div class="gallery-item waiting-box">WAITING FOR SIGNAL...</div>
+        <div class="gallery-item waiting-box">WAITING FOR SIGNAL...</div>
     </div>
 
     <div class="upload-terminal">
-        <!-- PASTE YOUR TALLY FORM LINK HERE -->
-        <iframe src="https://tally.so/r/LZJXeG?transparentBackground=1" title="Archive Upload"></iframe>
+        <iframe src="https://tally.so/r/YOUR_TALLY_ID?transparentBackground=1" title="Archive Upload"></iframe>
     </div>
 
     <a href="index.html" class="back-link">← RETURN TO MAIN TERMINAL</a>
