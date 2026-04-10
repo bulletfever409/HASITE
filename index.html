@@ -172,14 +172,14 @@
         const secrets = document.getElementById('secret-links');
         const portalBtn = document.getElementById('portal-link');
         
-        // "YABSOLUTE" in Base64
+        
         const _v = "WUFCU09MVVRF"; 
 
         input.addEventListener('input', (e) => {
             const userKey = e.target.value.toUpperCase();
             
             if (userKey === atob(_v)) {
-                // Link becomes yabsolute.html
+            
                 portalBtn.href = userKey.toLowerCase() + ".html";
 
                 prompt.style.opacity = '0';
