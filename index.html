@@ -59,7 +59,6 @@
             font-weight: 700; font-size: 1.8rem; margin-top: 35px;
             letter-spacing: -1px; text-transform: uppercase;
             border-bottom: 1px solid var(--border-muted); padding-bottom: 10px;
-            /* Updated for Right Justification */
             text-align: right;
             align-self: flex-end;
             width: 100%;
@@ -92,13 +91,7 @@
             border: 1px dashed var(--border-muted); background: rgba(0, 0, 0, 0.3);
         }
 
-        #key-input {
-            background: transparent; border: none; border-bottom: 1px solid var(--blue-glow);
-            color: var(--off-white); font-family: monospace; padding: 5px; outline: none;
-            width: 150px; text-transform: uppercase;
-        }
-
-        #secret-links { display: none; opacity: 0; transition: opacity 0.8s ease; }
+        #secret-links { display: block; opacity: 1; }
 
         .secret-link {
             color: white; text-decoration: none; font-family: 'Bellefair', serif;
@@ -149,16 +142,12 @@
         </div>
 
         <div class="terminal-section">
-            <div id="terminal-prompt">
-                <span style="font-size: 0.7rem; color: var(--blue-glow); font-weight: bold;">ENTER KEY:</span>
-                <input type="text" id="key-input" autocomplete="off" placeholder="********">
-            </div>
             <div id="secret-links">
-                <span style="color: var(--eva-red); font-size: 0.7rem; display: block; margin-bottom: 10px;">ACCESS GRANTED:</span>
+                <span style="color: var(--eva-red); font-size: 0.7rem; display: block; margin-bottom: 10px;">ACCESS GRANTED // KEY UNLOCKED BY LOOKER IN DISCORD</span>
                 <a href="https://www.instagram.com/bulletfever409" class="secret-link" target="_blank">IG @BULLETFEVER409</a>
                 <a href="https://twitter.com/apexofitall" class="secret-link" target="_blank">X @APEXOFITALL</a>
                 <br>
-                <a href="#" id="portal-link" class="portal-btn">ENTER ARCHIVE</a>
+                <a href="yabsolute.html" id="portal-link" class="portal-btn">ENTER ARCHIVE</a>
             </div>
         </div>
 
@@ -170,30 +159,5 @@
             </div>
         </div>
     </div>
-
-    <script>
-        const input = document.getElementById('key-input');
-        const prompt = document.getElementById('terminal-prompt');
-        const secrets = document.getElementById('secret-links');
-        const portalBtn = document.getElementById('portal-link');
-        
-        
-        const _v = "WUFCU09MVVRF"; 
-
-        input.addEventListener('input', (e) => {
-            const userKey = e.target.value.toUpperCase();
-            
-            if (userKey === atob(_v)) {
-                portalBtn.href = userKey.toLowerCase() + ".html";
-
-                prompt.style.opacity = '0';
-                setTimeout(() => {
-                    prompt.style.display = 'none';
-                    secrets.style.display = 'block';
-                    setTimeout(() => secrets.style.opacity = '1', 50);
-                }, 400);
-            }
-        });
-    </script>
 </body>
 </html>
