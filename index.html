@@ -29,7 +29,49 @@
                 linear-gradient(#0a0d12, #05070a);
             background-size: 100% 3px, 100% 100%, 100% 100%;
         }
+        
+        .glitch-wrapper { 
+            position: relative; 
+            width: 90%; 
+            max-width: 850px;
+        }
 
+        .glitch-layer {
+            position: absolute; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%;
+            padding: 40px; 
+            box-sizing: border-box; 
+            pointer-events: none;
+            display: none; 
+            z-index: 10;
+        }
+
+        .glitch-red { color: #ff0000; mix-blend-mode: screen; filter: drop-shadow(0 0 1px #ff0000); }
+        .glitch-blue { color: #00ffff; mix-blend-mode: screen; filter: drop-shadow(0 0 1px #00ffff); }
+
+        .is-glitching .glitch-layer { display: block; }
+        .is-glitching .glitch-red { animation: glitch-red-anim 0.3s infinite; }
+        .is-glitching .glitch-blue { animation: glitch-blue-anim 0.3s infinite; }
+
+        @keyframes glitch-red-anim {
+            0% { transform: translate(3px, -2px); }
+            25% { transform: translate(-4px, 1px); }
+            50% { transform: translate(2px, -3px); }
+            75% { transform: translate(-2px, 2px); }
+            100% { transform: translate(3px, -2px); }
+        }
+
+        @keyframes glitch-blue-anim {
+            0% { transform: translate(-3px, 2px); }
+            25% { transform: translate(4px, -1px); }
+            50% { transform: translate(-2px, 3px); }
+            75% { transform: translate(2px, -2px); }
+            100% { transform: translate(-3px, 2px); }
+        }
+        
         .frame {
             width: 90%;
             max-width: 850px;
@@ -123,41 +165,74 @@
     </style>
 </head>
 <body>
-    <div class="frame">
-        <span class="subtitle">A FIRST TRANSMISSION:</span>
-        <h1 class="title">WHISPER<br>OF A DREAM</h1>
-        <div class="byline">BY HOLDING ABSENCE</div>
 
-        <div class="video-section">
-            <div class="video-wrapper">
-                <iframe src="https://www.youtube.com/embed/o7QbtEsO3zE?modestbranding=1&rel=0" allowfullscreen></iframe>
+    <div class="glitch-wrapper" id="glitch-container">
+        <div class="frame">
+            <span class="subtitle">A FIRST TRANSMISSION:</span>
+            <h1 class="title">WHISPER<br>OF A DREAM</h1>
+            <div class="byline">BY HOLDING ABSENCE</div>
+
+            <div class="video-section">
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/o7QbtEsO3zE?modestbranding=1&rel=0" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <div class="link-grid">
+                <a href="https://twitter.com/holdingabsence" class="link-item" target="_blank">Band Twitter <span>[01]</span></a>
+                <a href="https://instagram.com/holdingabsence" class="link-item" target="_blank">Band Instagram <span>[02]</span></a>
+                <a href="https://twitter.com/lucaswoodland" class="link-item" target="_blank">L. Woodland Twitter <span>[03]</span></a>
+                <a href="https://www.instagram.com/loocaswoodland/" class="link-item" target="_blank">L. Woodland Instagram <span>[04]</span></a>
+            </div>
+
+            <div class="terminal-section">
+                <div id="secret-links">
+                    <span style="color: var(--eva-red); font-size: 0.7rem; display: block; margin-bottom: 10px;">ACCESS GRANTED // KEY UNLOCKED BY LOOKER IN DISCORD</span>
+                    <a href="https://www.instagram.com/bulletfever409" class="secret-link" target="_blank">IG @BULLETFEVER409</a>
+                    <a href="https://twitter.com/apexofitall" class="secret-link" target="_blank">X @APEXOFITALL</a>
+                    <br>
+                    <a href="yabsolute.html" id="portal-link" class="portal-btn">ENTER ARCHIVE</a>
+                </div>
+            </div>
+
+            <div class="footer-block">
+                <div class="legal-text">© 2026 ABSENCE AUTOMATIONS // ALL RIGHTS RESERVED.</div>
+                <div style="display: flex; align-items: center;">
+                    <div class="braille">⠃⠥⠇⠇⠑⠞⠋⠑⠧⠑⠗⠼⠙⠚⠊</div>
+                    <div style="font-family: monospace; opacity: 0.4;">|| ||| || |||| | ||| ||</div>
+                </div>
             </div>
         </div>
 
-        <div class="link-grid">
-            <a href="https://twitter.com/holdingabsence" class="link-item" target="_blank">Band Twitter <span>[01]</span></a>
-            <a href="https://instagram.com/holdingabsence" class="link-item" target="_blank">Band Instagram <span>[02]</span></a>
-            <a href="https://twitter.com/lucaswoodland" class="link-item" target="_blank">L. Woodland Twitter <span>[03]</span></a>
-            <a href="https://www.instagram.com/loocaswoodland/" class="link-item" target="_blank">L. Woodland Instagram <span>[04]</span></a>
-        </div>
-
-        <div class="terminal-section">
-            <div id="secret-links">
-                <span style="color: var(--eva-red); font-size: 0.7rem; display: block; margin-bottom: 10px;">ACCESS GRANTED // KEY UNLOCKED BY LOOKER IN DISCORD</span>
-                <a href="https://www.instagram.com/bulletfever409" class="secret-link" target="_blank">IG @BULLETFEVER409</a>
-                <a href="https://twitter.com/apexofitall" class="secret-link" target="_blank">X @APEXOFITALL</a>
-                <br>
-                <a href="yabsolute.html" id="portal-link" class="portal-btn">ENTER ARCHIVE</a>
-            </div>
-        </div>
-
-        <div class="footer-block">
-            <div class="legal-text">© 2026 ABSENCE AUTOMATIONS // ALL RIGHTS RESERVED.</div>
-            <div style="display: flex; align-items: center;">
-                <div class="braille">⠃⠥⠇⠇⠑⠞⠋⠑⠧⠑⠗⠼⠙⠚⠊</div>
-                <div style="font-family: monospace; opacity: 0.4;">|| ||| || |||| | ||| ||</div>
-            </div>
-        </div>
+        <div class="glitch-layer glitch-red" id="red-layer" aria-hidden="true"></div>
+        <div class="glitch-layer glitch-blue" id="blue-layer" aria-hidden="true"></div>
     </div>
+
+    <script>
+        const container = document.getElementById('glitch-container');
+        const frame = document.querySelector('.frame');
+        const redLayer = document.getElementById('red-layer');
+        const blueLayer = document.getElementById('blue-layer');
+
+        function triggerGlitch() {
+            const content = frame.innerHTML;
+            redLayer.innerHTML = content;
+            blueLayer.innerHTML = content;
+
+            container.classList.add('is-glitching');
+
+            setTimeout(() => {
+                container.classList.remove('is-glitching');
+                redLayer.innerHTML = '';
+                blueLayer.innerHTML = '';
+            }, 400);
+        }
+
+        setInterval(triggerGlitch, 5000);
+
+        window.onload = () => {
+            setTimeout(triggerGlitch, 1000);
+        };
+    </script>
 </body>
 </html>
