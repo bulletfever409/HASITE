@@ -174,7 +174,7 @@
     </p>
 
     <div class="gallery-grid" id="dynamic-gallery">
-        <!-- Gallery items will load here -->
+        
     </div>
 
     <script>
@@ -196,7 +196,7 @@
             });
         }
 
-        // Fetching gallery.json (matches file name)
+        
         fetch('gallery.json')
             .then(response => response.json())
             .then(data => renderGallery(data))
