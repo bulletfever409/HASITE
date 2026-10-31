@@ -60,11 +60,10 @@
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 30px; /* Increased gap to make room for text */
+            gap: 30px;
             margin-bottom: 60px;
         }
 
-        /* Container for image + caption */
         .gallery-container {
             display: flex;
             flex-direction: column;
@@ -82,7 +81,6 @@
             position: relative;
         }
 
-        /* Caption Styling */
         .gallery-caption {
             margin-top: 10px;
             font-size: 0.65rem;
@@ -118,15 +116,6 @@
         .gallery-item:hover img {
             filter: contrast(1.2) brightness(1.1);
             transform: scale(1.05);
-        }
-
-        .waiting-box {
-            font-size: 0.55rem;
-            color: #333;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            font-family: monospace;
-            border-style: dashed;
         }
 
         .upload-terminal {
@@ -184,86 +173,44 @@
         // MODERATED USER UPLOADS
     </p>
 
-    <div class="gallery-grid">
-        <div class="gallery-container">
-            <div class="gallery-item">
-                <img src="https://lh3.googleusercontent.com/d/1tgCM3J1JpnE1FoGVVct9BLTtsiBDaTrs" alt="Transmission 01">
-            </div>
-            <div class="gallery-caption">Transmission 01</div>
-        </div>
-
-        <div class="gallery-container">
-            <div class="gallery-item">
-                <img src="https://lh3.googleusercontent.com/d/17PqIv_WqTlnufFluq0XAGDDW0X5GOv8f" alt="Transmission 02 // princesskilljoy">
-            </div>
-            <div class="gallery-caption">Transmission 02 // princesskilljoy</div>
-        </div>
-
-        <div class="gallery-container">
-            <div class="gallery-item">
-                <img src="https://lh3.googleusercontent.com/d/1-QB43-hqCCejxa_w_l1HiMsxqyz0_-pf" alt="Transmission 03 // evsuliini">
-            </div>
-            <div class="gallery-caption">Transmission 03 // evsuliini</div>
-        </div>
-
-        <div class="gallery-container">
-            <div class="gallery-item">
-                <img src="https://lh3.googleusercontent.com/d/1z_BLzoTUHhO9VoeFG8s-x6ZVU-G4Yw8b" alt="Transmission 04 // evsuliini">
-            </div>
-            <div class="gallery-caption">Transmission 04 // evsuliini</div>
-        </div>
-
-        <div class="gallery-container">
-            <div class="gallery-item">
-                <img src="https://lh3.googleusercontent.com/d/1xicajHf8FzVwit2L6SgkC54TTzvEHZ6J" alt="Transmission 05 // evsuliini">
-            </div>
-            <div class="gallery-caption">Transmission 05 // evsuliini</div>
-        </div>
-        
-        <div class="gallery-container">
-            <div class="gallery-item">
-                <img src="https://lh3.googleusercontent.com/d/1jL5BMr8P-z3pOnZIXsC7RUA32hmc3gP_" alt="Transmission 06 // brettriot">
-            </div>
-            <div class="gallery-caption">Transmission 06 // brettriot</div>
-        </div>
-
-        <div class="gallery-container">
-            <div class="gallery-item">
-                <img src="https://lh3.googleusercontent.com/d/1RSS1AytrGf8NZrCdAi7rejQQAcuU-3bQ" alt="Transmission 07 // Klow123">
-            </div>
-            <div class="gallery-caption">Transmission 07 // Klow123</div>
-        </div>
-    
-        <div class="gallery-container">
-            <div class="gallery-item">
-                <img src="https://lh3.googleusercontent.com/d/1V0npLOs1xoCxn-lDxSa9A2EYSJMPUXCc" alt="Transmission 08 // Coffee Dealer">
-            </div>
-            <div class="gallery-caption">Transmission 08 // Coffee Dealer</div>
-        </div>
-
-             <div class="gallery-container">
-            <div class="gallery-item">
-                <img src="https://lh3.googleusercontent.com/d/1m4veEXTomBwfnW2Cx7tFCL-pNQ6okfYK" alt="Transmission 09 // ameyume">
-            </div>
-            <div class="gallery-caption">Transmission 09 // ameyume</div>
-             </div>
-
-       <div class="gallery-container">
-            <div class="gallery-item">
-                <img src="https://lh3.googleusercontent.com/d/1wSZECIfayL1RaDY3tOv_HMIsfl_VgAlC" alt="Transmission 10 // ameyume">
-            </div>
-            <div class="gallery-caption">Transmission 10 // ameyume</div>
-       </div>
-
-        
-       <div class="gallery-container">
-            <div class="gallery-item">
-                <img src="https://lh3.googleusercontent.com/d/1Qdb-kS8MpZzpmpuvjvIMj8ejPH1CfJIX" alt="Transmission 11 // SkyeWolf">
-            </div>
-            <div class="gallery-caption">Transmission 11 // SkyeWolf</div>
-       </div>
-      
+    <div class="gallery-grid" id="dynamic-gallery">
+        <!-- Gallery items will load here -->
     </div>
+
+    <script>
+        function renderGallery(items) {
+            const grid = document.getElementById('dynamic-gallery');
+            grid.innerHTML = ''; 
+            
+            items.forEach(item => {
+                const container = document.createElement('div');
+                container.className = 'gallery-container';
+                
+                container.innerHTML = `
+                    <div class="gallery-item">
+                        <img src="${item.url}" alt="${item.name}">
+                    </div>
+                    <div class="gallery-caption">${item.name}</div>
+                `;
+                grid.appendChild(container);
+            });
+        }
+
+        // Fetching gallery.json (matches file name)
+        fetch('gallery.json')
+            .then(response => response.json())
+            .then(data => renderGallery(data))
+            .catch(error => {
+                console.warn('Fetch failed, using fallback data.', error);
+                const fallbackData = [
+                    {
+                        "url": "https://www.dropbox.com/scl/fi/r80o0urmrhee09fd45y67/princesskilljoy.jpg?raw=1",
+                        "name": "Transmission 01 // Princesskilljoy"
+                    }
+                ];
+                renderGallery(fallbackData);
+            });
+    </script>
 
     <div class="upload-terminal">
         <iframe src="https://tally.so/r/VLMYxN" title="Archive Upload"></iframe>
