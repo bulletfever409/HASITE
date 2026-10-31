@@ -174,7 +174,7 @@
     </p>
 
     <div class="gallery-grid" id="dynamic-gallery">
-
+        <!-- Gallery items will load here -->
     </div>
 
     <script>
@@ -196,22 +196,16 @@
             });
         }
 
-
+        // Fetching gallery.json (matches file name)
         fetch('gallery.json')
             .then(response => response.json())
             .then(data => renderGallery(data))
             .catch(error => {
-                console.warn('Fetch failed (likely due to local file:// CORS security). Using fallback data for testing.');
-                
-
+                console.warn('Fetch failed, using fallback data.', error);
                 const fallbackData = [
                     {
                         "url": "https://www.dropbox.com/scl/fi/r80o0urmrhee09fd45y67/princesskilljoy.jpg?raw=1",
                         "name": "Transmission 01 // Princesskilljoy"
-                    },
-                    {
-                        "url": "https://www.dropbox.com/scl/fi/5l24pm8bgf4h54xi0ruta/evsuliini.jpg?raw=1",
-                        "name": "Transmission 02 // evsuliini"
                     }
                 ];
                 renderGallery(fallbackData);
